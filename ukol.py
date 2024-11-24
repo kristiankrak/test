@@ -1,8 +1,22 @@
-a = 15 #zasazení hodnoty
-b = 8
-c = 23
 
-maximum = max(a, b, c) #najde maximum
-minimum = min(a, b, c) #najde minimum
-middle = a + b + c - maximum -  minimum #najde střed odečte minimum a maximum od všech čísel :D
-print(maximum, middle, minimum) #print
+soucet = 0
+pocet = 0
+cisla = []
+while True:
+    cislo = int(input("Zadejte přirozené číslo (nebo -1 pro konec): "))
+    if cislo == -1:
+        break
+    cisla.append(cislo)
+    soucet += cislo
+    pocet += 1
+if pocet > 0:
+    ap = soucet / pocet
+    print(f"Aritmetický průměr: {ap}")
+
+    mensi = sum(1 for x in cisla if x < ap)
+    vetsi = sum(1 for x in cisla if x > ap)
+
+    print(f"Počet čísel menších než AP: {mensi}")
+    print(f"Počet čísel větších než AP: {vetsi}")
+else:
+    print("Nebyla zadána žádná čísla.")
